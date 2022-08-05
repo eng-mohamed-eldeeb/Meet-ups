@@ -24,12 +24,25 @@ const HomgPage = (props) => {
 };
 
 
-export async function getStaticProps() {
+export async function getServerSideProps(context) {
+  const req = context.req;
+  const res = context.res;
   return {
     props: {
       meetups: DD
     }
   }
 }
+
+
+// export async function getStaticProps() {
+    //fetch data
+//   return {
+//     props: {
+//       meetups: DD
+//     },
+//     revalidate: 10
+//   }
+// }
 
 export default HomgPage;
