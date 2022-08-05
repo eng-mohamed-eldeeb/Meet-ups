@@ -19,7 +19,17 @@ const DD = [
   },
 ];
 
-const HomgPage = () => {
-  return <MeetupList meetups={DD} />;
+const HomgPage = (props) => {
+  return <MeetupList meetups={props.meetups} />;
 };
+
+
+export async function getStaticProps() {
+  return {
+    props: {
+      meetups: DD
+    }
+  }
+}
+
 export default HomgPage;
